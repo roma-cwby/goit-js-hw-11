@@ -18,7 +18,7 @@ function addHistory(value) {
   if (data && data.length > 0) {
     if (data.includes(value) || value === '') return;
     if (data.length >= historySize) {
-      result = [];
+      let result = [];
       for (let i = 1; i < data.length; i++) result.push(data[i]);
 
       data = result;
