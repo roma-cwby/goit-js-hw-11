@@ -1,8 +1,8 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import markup from './markup.js';
+import markup from '../js/markup.js';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import history from './history.js';
+import history from '../js/history.js';
 
 const axios = require('axios').default;
 
@@ -28,7 +28,7 @@ input.addEventListener('submit', onSearch);
 historyList.addEventListener('click', onHistory);
 const observer = new IntersectionObserver(onScroll, options);
 
-async function onSearch(e) {
+function onSearch(e) {
   e.preventDefault();
   page = 1;
   tag = e.currentTarget.children[0].children[0].value.trim();
@@ -77,8 +77,6 @@ async function onScroll(entries) {
     }
   }
   if (maxPage && page > maxPage) {
-    console.log(page);
-    console.log(maxPage);
     observer.unobserve(guard);
     Notify.failure(
       `We're sorry, but you've reached the end of search results.`
