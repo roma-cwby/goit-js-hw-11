@@ -14,27 +14,19 @@ function cards(images) {
         />
         <div class="info">
           <p class="info-item">
-            <svg class="heart" width="20" height="20">
-              <use href="./icons.svg#icon-heart"></use>
-            </svg>
+            Likes
             <b>${img.likes}</b>
           </p>
           <p class="info-item">
-            <svg class="eye" width="20" height="20">
-              <use href="./icons.svg#icon-eye"></use>
-            </svg>
+            Views
             <b>${img.views}</b>
           </p>
           <p class="info-item">
-            <svg class="bubble" width="20" height="20">
-              <use href="./icons.svg#icon-bubble"></use>
-            </svg>
+            Comments
             <b>${img.comments}</b>
           </p>
           <p class="info-item">
-            <svg class="download" width="20" height="20">
-              <use href="./icons.svg#icon-download3"></use>
-            </svg>
+            Downloads
             <b>${img.downloads}</b>
           </p>
         </div>

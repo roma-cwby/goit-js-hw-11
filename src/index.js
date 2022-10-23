@@ -2,6 +2,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import markup from './markup.js';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+import history from './history.js';
 
 const axios = require('axios').default;
 
@@ -10,6 +11,7 @@ const apiKey = '30798635-fb0e0813d5f318e7401c3a1d6';
 
 const input = document.querySelector('.search-form');
 const gallery = document.querySelector('.gallery');
+const historyList = document.querySelector('.history');
 
 const guard = document.querySelector('.guard');
 const options = {
@@ -23,6 +25,7 @@ let maxPage = null;
 let page = 1;
 
 input.addEventListener('submit', onSearch);
+historyList.addEventListener('click', onHistory);
 const observer = new IntersectionObserver(onScroll, options);
 
 async function onSearch(e) {
@@ -31,11 +34,7 @@ async function onSearch(e) {
   tag = e.currentTarget.children[0].children[0].value.trim();
   gallery.innerHTML = '';
 
-  await getImg(tag);
-
-  lightbox.refresh();
-
-  observer.observe(guard);
+  getImg(tag);
 }
 
 async function getImg(tag) {
@@ -48,12 +47,16 @@ async function getImg(tag) {
       'Sorry, there are no images matching your search query. Please try again.'
     );
 
+  history.addHistory(tag);
+
   if (page === 1) {
     Notify.info(`Hooray! We found ${images.data.totalHits} images.`);
     maxPage = Math.floor(Number(images.data.totalHits) / 40 + 1);
+    observer.observe(guard);
   }
 
   gallery.insertAdjacentHTML('beforeend', markup.cards(images.data.hits));
+  lightbox.refresh();
   page += 1;
 }
 
@@ -81,4 +84,13 @@ async function onScroll(entries) {
       `We're sorry, but you've reached the end of search results.`
     );
   }
+}
+
+function onHistory(e) {
+  if (e.currentTarget === e.target) return;
+
+  tag = `${e.target.id}`;
+  page = 1;
+  gallery.innerHTML = '';
+  getImg(tag);
 }

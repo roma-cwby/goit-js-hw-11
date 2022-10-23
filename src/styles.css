@@ -18,10 +18,12 @@ a{
 }
 
 b{
+    display: block;
     color: rgb(51, 47, 42);
 }
 
 p{
+    color: rgb(29, 25, 20);
     text-align: center;
 }
 
@@ -43,7 +45,7 @@ body{
 }
 
 main{
-    padding: 50px 20px;
+    padding: 80px 20px;
 }
 
 header{
@@ -64,6 +66,10 @@ header{
     box-shadow:5px 5px 10px rgb(0, 132, 184);
 }
 
+form{
+    margin-bottom: 10px;
+}
+
 .form-wrap{
     display: inline-block;
     position: relative;
@@ -74,6 +80,7 @@ header{
 }
 
 input{
+    font-size: 20px;
     height: 30px;
     width: 300px;
     padding-left: 5px;
@@ -99,6 +106,24 @@ button{
 button svg{
     fill: rgb(0, 0, 90);
 }
+
+.history{
+    display: inline-flex;
+}
+
+.history li{
+    padding: 5px 10px;
+
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgb(0, 132, 184) ,
+    -5px -5px 10px rgb(72, 203, 255);
+    cursor: pointer;
+}
+
+.history li:not(:last-child){
+margin-right: 10px;
+}
+
 
 .gallery{
     display: flex;
