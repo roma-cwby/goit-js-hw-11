@@ -5,8 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <h1>title</h1>
+    <header>
+      <form class="search-form" id="search-form">
+        <div class="form-wrap">
+          <input
+            type="text"
+            name="searchQuery"
+            autocomplete="off"
+            placeholder="Search images..."
+          />
+          <button type="submit">
+            <svg width="20" height="20">
+              <use href="./icons.svg#icon-search"></use>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </header>
+
+    <main>
+      <div class="gallery">
+        <a
+          clacc="gallery__item"
+          href="https://pixabay.com/get/gc76c8b9c1495fac613838d1f4a6ea650ad27ccc1768160c088751658e1521455c1ec8aec6e4433b1e90795743f3da06d757c98608d0efa0d5dcb9afd89152470_1280.jpg"
+        >
+          <div class="gallery-wrap">
+            <img
+              class="gallery__img"
+              src="https://pixabay.com/get/gd32ac7ba65dc3896af6ad09250d761dc7a5d249288541bbf1ab1fe9118afb3dd7b4991a9e021784c5c6c78f27644916bf3fa56299ee00daace7b08d71299c858_640.jpg"
+              alt="man, woman, dog"
+              loadind="lazy"
+            />
+            <div class="info">
+              <p class="info-item">
+                <svg width="20" height="20">
+                  <use href="./icons.svg#icon-heart"></use>
+                </svg>
+                <b>2098</b>
+              </p>
+              <p class="info-item">
+                <svg width="20" height="20">
+                  <use href="./icons.svg#icon-eye"></use>
+                </svg>
+                <b>1311583</b>
+              </p>
+              <p class="info-item">
+                <svg width="20" height="20">
+                  <use href="./icons.svg#icon-bubble"></use>
+                </svg>
+                <b>324</b>
+              </p>
+              <p class="info-item">
+                <svg width="20" height="20">
+                  <use href="./icons.svg#icon-download3"></use>
+                </svg>
+                <b>849152</b>
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </main>
+
+    <div class="guard"></div>
+    <script src="./index.js" type="module"></script>
   </body>
 </html>
