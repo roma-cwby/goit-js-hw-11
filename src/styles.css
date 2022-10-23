@@ -87,7 +87,7 @@ input:focus{
 
 button{
     position: absolute;
-    top: 0;
+    top: 1;
     right: 5;
     z-index: 1;
 
@@ -138,6 +138,19 @@ button svg{
 .info{
     display: flex;
     justify-content: space-around;
+}
+
+.heart{
+    fill: rgb(165, 0, 0);
+}
+.eye{
+    fill: rgb(0, 100, 0);
+}
+.bubble{
+    fill: rgb(129, 129, 129);
+}
+.download{
+    fill: black
 }
 
 /* button{
