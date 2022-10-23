@@ -6,7 +6,7 @@ import history from '../js/history.js';
 
 const axios = require('axios').default;
 
-const BASE_URL = 'https://pixabay.com/api';
+const BASE_URL = 'https://pixabay.com/api/';
 const apiKey = '30798635-fb0e0813d5f318e7401c3a1d6';
 
 const input = document.querySelector('.search-form');
